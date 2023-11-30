@@ -4,26 +4,26 @@ Este projeto utiliza o framework de teste end-to-end Cypress para automatizar te
 
 ## Pré-requisitos
 
-Certifique-se de ter o Node.js instalado em sua máquina. Você pode baixá-lo em [nodejs.org](https://nodejs.org/).
+Certifique-se de ter o Node.js versão LTS  instalado em sua máquina. Você pode baixá-lo em [nodejs.org](https://nodejs.org/).
 
 ## Instalação
 
 1. **Clone este repositório:** a
 
     ```bash
-    git clone https://github.com/seu-usuario/projeto-cypress-apple-cart.git
+    git clone https://github.com/GiuCampos/CypressApple.git
     ```
 
 2. **Navegue até o diretório do projeto:**
 
     ```bash
-    cd projeto-cypress-apple-cart
+    cd CypressApple
     ```
 
 3. **Instale as dependências do projeto:**
 
     ```bash
-    npm install
+    npm install 
     ```
 
 ## Executando os Testes
@@ -31,4 +31,4 @@ Certifique-se de ter o Node.js instalado em sua máquina. Você pode baixá-lo e
 Para executar os testes, utilize o seguinte comando:
 
 ```bash
-npm run test
+npm start
