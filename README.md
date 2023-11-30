@@ -8,7 +8,7 @@ Certifique-se de ter o Node.js instalado em sua máquina. Você pode baixá-lo e
 
 ## Instalação
 
-1. **Clone este repositório:**
+1. **Clone este repositório:** a
 
     ```bash
     git clone https://github.com/seu-usuario/projeto-cypress-apple-cart.git
