@@ -8,7 +8,7 @@ Certifique-se de ter o Node.js versão LTS  instalado em sua máquina. Você pod
 
 ## Instalação
 
-1. **Clone este repositório:** a
+1. **Clone este repositório:** 
 
     ```bash
     git clone https://github.com/GiuCampos/CypressApple.git
