@@ -21,7 +21,7 @@ describe('Teste de compra', () => {
 
     cy.visit('https://www.apple.com/br/store')
     //Acessa o site desejado
-    cy.contains('Loja. Já é Natal na Apple. Maravilhas à sua espera.')
+    cy.contains('O melhor jeito de comprar o que você ama.')
     //Valida se foi acessado o site corretamente, de acordo com o texto esperado
 
     cy.wait(2000)
@@ -29,7 +29,7 @@ describe('Teste de compra', () => {
 
     cy.get('#shelf-2_section > .rf-cards-scroller > .rf-cards-scroller-crop > .rf-cards-scroller-content > .rf-cards-scroller-platter > :nth-child(1) > .rf-cards-scroller-itemview > .rf-ccard > .as-util-relatedlink > .rf-ccard-content > .rf-ccard-img-full-wrapper > .rf-ccard-img-full').click();
     //Seleciona o produto desejado
-    cy.contains('Tela de 6,1 polegadas¹').click();
+    cy.contains('iPhone 16 Pro Tela de 6,3 polegadas nota de rodapé ¹').click();
     //Seleciona o modelo do produto
     cy.contains('Cor')
     //Visualiza se existe a opção de selecionar a cor do produto
