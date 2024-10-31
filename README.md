@@ -25,11 +25,6 @@ Certifique-se de ter o Node.js versão LTS  instalado em sua máquina. Você pod
     ```bash
     npm install 
     ```
-4. **Escolha o Browsr para rodar o teste**
-  
-  ```bash
-    Utilize o Browsr Elctron para melhor desempenho
-    ```
 
 ## Executando os Testes
 
@@ -37,4 +32,9 @@ Para executar os testes, utilize o seguinte comando:
 
 ```bash
 npm start
+```
+**Escolha o Browsr para rodar o teste**
+  
+  ```bash
+    Utilize o Browsr Elctron para melhor desempenho
 ```
