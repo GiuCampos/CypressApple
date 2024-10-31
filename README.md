@@ -33,7 +33,7 @@ Para executar os testes, utilize o seguinte comando:
 ```bash
 npm start
 ```
-**Escolha o Browsr para rodar o teste**
+**Escolha o Browser para rodar o teste**
   
   ```bash
     Utilize o Browsr Elctron para melhor desempenho
