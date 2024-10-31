@@ -1,6 +1,6 @@
 # Projeto Cypress para Testar Carrinho de Compras da Apple
 
-Este projeto utiliza o framework de teste end-to-end Cypress para automatizar testes no carrinho de compras da Apple. O objetivo é garantir que a funcionalidade de adicionar produtos ao carrinho e realizar o processo de checkout funcione corretamente.
+Este projeto utiliza o framework de teste end-to-end Cypress para automatizar testes no carrinho de compras da Apple. O objetivo é garantir que a funcionalidade de selecionar produtos e adicionar a sacola funcione corretamente.
 
 ## Pré-requisitos
 
@@ -25,6 +25,11 @@ Certifique-se de ter o Node.js versão LTS  instalado em sua máquina. Você pod
     ```bash
     npm install 
     ```
+4. **Escolha o Browsr para rodar o teste**
+  
+  ```bash
+    Utilize o Browsr Elctron para melhor desempenho
+    ```
 
 ## Executando os Testes
 
@@ -32,3 +37,4 @@ Para executar os testes, utilize o seguinte comando:
 
 ```bash
 npm start
+```

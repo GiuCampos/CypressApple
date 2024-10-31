@@ -1,55 +1,50 @@
 describe('Teste de compra', () => {
+  const appleUrl = 'https://www.apple.com/br/';
+  const storeUrl = 'https://www.apple.com/br/store';
+  const productTitle = 'iPhone 16 Pro de 128 GB – Titânio-deserto';
+
   it('Acessar Loja da Apple', () => {
+    cy.viewport(2000, 1100);
+    cy.visit(appleUrl);
 
-    cy.viewport(2000, 1100)
-    //Define a janela de visualização para 2000px x 1100px
+    cy.url().should('eq', appleUrl); // Verifica se a URL é correta
+    cy.contains('Loja').click(); // Clica na opção de Loja
+  });
 
-    cy.visit('https://www.apple.com/br/')
-    //Acessa o site desejado
-    cy.url('')
-      .should('be.equal', 'https://www.apple.com/br/')
-    //Valida se foi acessado o site corretamente
-    cy.contains('Loja').click()
-    //Valida se existe a opção de Loja dentro do site e realiza o clique
+  it('Adiciona produto na sacola', () => {
+    cy.viewport(2000, 1100);
+    cy.visit(storeUrl);
 
-  })
+    cy.contains('Loja.').should('be.visible'); // Verifica se a loja está acessível
 
-  it('Realiza compra', () => {
+    // Seleciona o iPhone
+    cy.get('a.rf-productnav-card-title').contains('iPhone').click();
+    cy.get('.rf-cards-scroller-itemview').contains('iPhone 16').click();
+    cy.get('.rf-digitalmat-contentsection').contains('Comprar').click();
 
-    cy.viewport(2000, 1100)
-    //Define a janela de visualização para 2000px x 1100px
+    // Seleciona o modelo desejado
+    cy.get('.rf-bfe-column-right', {
+        timeout: 10000
+      })
+      .contains('iPhone 16 Pro')
+      .click();
 
-    cy.visit('https://www.apple.com/br/store')
-    //Acessa o site desejado
-    cy.contains('O melhor jeito de comprar o que você ama.')
-    //Valida se foi acessado o site corretamente, de acordo com o texto esperado
+    // Rola até a seção de cor e seleciona
+    cy.contains('Cor').scrollIntoView();
+    cy.get(':nth-child(1) > .colornav-link > .colornav-swatch').click();
 
-    cy.wait(2000)
-    //Aguarda 20s antes de continuar o teste
+    // Seleciona a capacidade de armazenamento
+    cy.get('.rf-bfe-last-step > .rc-dimension')
+      .contains('128 GB')
+      .click();
 
-    cy.get('#shelf-2_section > .rf-cards-scroller > .rf-cards-scroller-crop > .rf-cards-scroller-content > .rf-cards-scroller-platter > :nth-child(1) > .rf-cards-scroller-itemview > .rf-ccard > .as-util-relatedlink > .rf-ccard-content > .rf-ccard-img-full-wrapper > .rf-ccard-img-full').click();
-    //Seleciona o produto desejado
-    cy.contains('iPhone 16 Pro Tela de 6,3 polegadas nota de rodapé ¹').click();
-    //Seleciona o modelo do produto
-    cy.contains('Cor')
-    //Visualiza se existe a opção de selecionar a cor do produto
-    cy.get(':nth-child(4) > .colornav-link > .colornav-swatch').click()
-    //Seleciona a cor do produto desejado
-    cy.contains('Armazenamento')
-    //Visualiza se existe a opção de selecionar a quantidade de armazenamento do produto
-    cy.contains('128 GB').click();
-    //Seleciona a opção desejada
-    cy.contains('Colocar na sacola').click()
-    //Visualiza se existe a opção de comprar e realiza o clique
-    cy.contains('Ver sacola').click()
-    //Visualiza se existe a opção Ver Sacola e realiza o clique
-    cy.contains('Pagar').click()
-    //Visualiza se existe a opção Pagar e realiza o clique.
+    // Confere o resumo do pedido
+    cy.get('.rf-bfe-summary-section-fullWidth')
+      .contains('iPhone 16 Pro de 128 GB – Titânio-deserto'); // Verifica o resumo do pedido
 
-    cy.wait(500)
-    //Aguarda 5s antes de continuar o teste
-
-    cy.contains('Inicie sessão para finalizar a compra com rapidez.')
-    //Confere se foi redirecionado para tela de finalizar compra.
-  })
+    // Adiciona produto na sacola
+    cy.get('.rf-bfe-summary-grid')
+      .contains('Colocar na sacola')
+      .click();
+  });
 });
