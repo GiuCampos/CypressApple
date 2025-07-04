@@ -40,8 +40,6 @@ Editar
 npm start
 Ao abrir a interface, selecione o navegador desejado (recomenda-se usar o Electron para melhor desempenho local).
 
-Ou, se preferir rodar os testes em modo headless (sem interface):
-
 bash
 Copiar
 Editar
@@ -57,27 +55,6 @@ Validação do resumo do produto
 
 Adição do item à sacola
 
-📁 Estrutura do Projeto
-pgsql
-Copiar
-Editar
-CypressApple/
-├── cypress/
-│   ├── e2e/
-│   │   └── fluxo-compra.cy.js       # Arquivo principal de teste
-│   └── support/
-│       ├── commands.js              # Comandos customizados do Cypress
-│       └── e2e.js                   # Importa os comandos no contexto global
-├── package.json
-└── README.md
-💡 Melhorias Futuras
-Implementar o padrão Page Object Model (POM)
-
-Utilizar fixtures para massa de dados
-
-Incluir testes negativos e fluxos alternativos
-
-Integração com CI/CD (GitHub Actions)
 
 👩‍💻 Sobre
 Desenvolvido por Giuliana Campos

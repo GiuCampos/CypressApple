@@ -6,28 +6,23 @@
 });
 
 Cypress.Commands.add('selecionarProduto', (nomeProduto) => {
-  cy.contains(nomeProduto).click();
+  cy.get(':nth-child(1) > .rf-cards-scroller-itemview > .rf-ccard > .as-util-relatedlink > .rf-ccard-content > .rf-ccard-img-full-wrapper > .rf-ccard-img-full')
+  .click({ force: true });
 });
 
-Cypress.Commands.add('selecionarModelo', (modelo) => {
-  cy.contains(modelo).click();
-});
-
-Cypress.Commands.add('clicarEmComprar', () => {
-  cy.contains('Comprar').click();
-});
-
-Cypress.Commands.add('selecionarVersao', (versao) => {
-  cy.contains(versao).click();
+Cypress.Commands.add('selecionarVersao', () => {
+  cy.contains('Tela de 6,3').click({ force: true });
 });
 
 Cypress.Commands.add('selecionarCor', () => {
-  cy.contains('Cor').scrollIntoView();
-  cy.get(':nth-child(1) > .colornav-link > .colornav-swatch').click();
+  cy.get('.colornav-link .colornav-swatch')
+    .first()
+    .scrollIntoView()
+    .click({ force: true });
 });
 
 Cypress.Commands.add('selecionarArmazenamento', (capacidade) => {
-  cy.contains(capacidade).click();
+  cy.contains(capacidade).scrollIntoView().click({ force: true });
 });
 
 Cypress.Commands.add('validarResumo', (produtoEsperado) => {
@@ -35,32 +30,6 @@ Cypress.Commands.add('validarResumo', (produtoEsperado) => {
 });
 
 Cypress.Commands.add('adicionarNaSacola', () => {
-  cy.contains('Colocar na sacola').click();
+  cy.contains('Colocar na sacola').click({ force: true });
 });
 
-// 
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })

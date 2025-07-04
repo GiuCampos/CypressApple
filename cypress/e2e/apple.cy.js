@@ -13,12 +13,8 @@ describe('Fluxo de compra na Apple Store', () => {
   it('Deve adicionar um iPhone 16 Pro 128GB na sacola', () => {
     cy.visit('https://www.apple.com/br/store');
     cy.contains('Loja.').should('be.visible');
-
-    cy.selecionarProduto('iPhone');
-    cy.selecionarModelo('iPhone 16');
-    cy.clicarEmComprar();
-
-    cy.selecionarVersao('iPhone 16 Pro');
+    cy.selecionarProduto('iphone 16');
+    cy.selecionarVersao('Tela de 6,3¹');
     cy.selecionarCor();
     cy.selecionarArmazenamento('128 GB');
     cy.validarResumo(produtoEsperado);
